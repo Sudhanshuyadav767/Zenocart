@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Catalog - ZENOCART</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div id="shop-page-identifier"></div>
+
+    <header class="header" id="header">
+        <nav class="navbar container">
+            <a href="../index.html" class="nav-logo">JolyTrend</a>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="shop.html" style="color: var(--primary-red);">Shop</a></li>
+                <li><a href="custom/index.html">Custom Design</a></li>
+                <li><a href="wholesale.html">Wholesale</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="cart.html" class="nav-cart-btn" style="position: relative; color: inherit; display: flex; align-items: center; text-decoration: none; margin-right: 15px;">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width: 24px; height: 24px;"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c.51 0 .962-.344 1.087-.835l1.823-6.44a1.125 1.125 0 00-.142-1.095L17.102 3.75H5.484M7.5 14.25L5.106 5.165m0 0a1.5 1.5 0 01-1.823-1.095l-1.823-6.441" /></svg>
+                    <span id="cart-count" class="cart-count" style="position: absolute; top: -6px; right: -6px; background: var(--primary-red); color: white; border-radius: 50%; width: 18px; height: 18px; font-size: 0.7rem; display: none; align-items: center; justify-content: center; font-weight: 700;">0</span>
+                </a>
+                <a href="../index.html" class="login-btn">Login / Register</a>
+            </div>
+
+            <div class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="shop-hero">
+            <div class="container">
+                <h1>Shop Our Collection</h1>
+                <p>Browse our catalog of premium standard apparel or customize them in our trial room.</p>
+            </div>
+        </section>
+
+        <section style="padding: 0;">
+            <div class="container shop-container">
+                <!-- Sidebar Filters -->
+                <aside class="shop-sidebar">
+                    <div class="filter-group">
+                        <h3>Categories</h3>
+                        <ul class="filter-list">
+                            <li class="filter-item">
+                                <input type="checkbox" id="cat-tshirts" class="category-filter-checkbox" value="T-Shirts">
+                                <label for="cat-tshirts">T-Shirts</label>
+                            </li>
+                            <li class="filter-item">
+                                <input type="checkbox" id="cat-polos" class="category-filter-checkbox" value="Polo Shirts">
+                                <label for="cat-polos">Polo Shirts</label>
+                            </li>
+                            <li class="filter-item">
+                                <input type="checkbox" id="cat-hoodies" class="category-filter-checkbox" value="Hoodies">
+                                <label for="cat-hoodies">Hoodies</label>
+                            </li>
+                            <li class="filter-item">
+                                <input type="checkbox" id="cat-caps" class="category-filter-checkbox" value="Caps">
+                                <label for="cat-caps">Caps</label>
+                            </li>
+                            <li class="filter-item">
+                                <input type="checkbox" id="cat-mugs" class="category-filter-checkbox" value="Mugs">
+                                <label for="cat-mugs">Mugs</label>
+                            </li>
+                            <li class="filter-item">
+                                <input type="checkbox" id="cat-bottles" class="category-filter-checkbox" value="Bottles">
+                                <label for="cat-bottles">Bottles</label>
+                            </li>
+                            <li class="filter-item">
+                                <input type="checkbox" id="cat-bags" class="category-filter-checkbox" value="Bags">
+                                <label for="cat-bags">Bags</label>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+
+                <!-- Product Catalog List -->
+                <div class="shop-content">
+                    <div class="shop-toolbar">
+                        <div class="search-bar">
+                            <input type="text" id="shop-search" placeholder="Search products...">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" /></svg>
+                        </div>
+                        
+                        <select id="shop-sort" class="sort-select">
+                            <option value="popular">Sort by: Popularity</option>
+                            <option value="price-low">Sort by: Price (Low to High)</option>
+                            <option value="price-high">Sort by: Price (High to Low)</option>
+                            <option value="rating">Sort by: Rating</option>
+                        </select>
+                    </div>
+
+                    <!-- Products Grid populated by script.js -->
+                    <div class="product-grid" id="shop-product-grid">
+                        <!-- Dynamic items -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col about">
+                    <h4>ZENOCART</h4>
+                    <p>The ultimate platform for custom apparel, merchandise, and wholesale ordering. Design it, customize it, make it yours.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="custom/index.html">T-Shirts</a></li>
+                        <li><a href="custom/index.html">Hoodies</a></li>
+                        <li><a href="custom/index.html">Caps</a></li>
+                        <li><a href="custom/index.html">Mugs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Customization</h4>
+                    <ul>
+                        <li><a href="custom/index.html">Start Designing</a></li>
+                        <li><a href="custom/index.html">Trial Room</a></li>
+                        <li><a href="custom/index.html">Design Templates</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ZENOCART. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#header" id="back-to-top" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+    </a>
+
+    <script src="../script.js"></script>
+</body>
+</html>

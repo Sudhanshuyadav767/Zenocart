@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - ZENOCART</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div id="cart-page-identifier"></div>
+
+    <header class="header" id="header">
+        <nav class="navbar container">
+            <a href="../index.html" class="nav-logo">JolyTrend</a>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="custom/index.html">Custom Design</a></li>
+                <li><a href="wholesale.html">Wholesale</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="cart.html" class="nav-cart-btn" style="position: relative; color: inherit; display: flex; align-items: center; text-decoration: none; margin-right: 15px;">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width: 24px; height: 24px;"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c.51 0 .962-.344 1.087-.835l1.823-6.44a1.125 1.125 0 00-.142-1.095L17.102 3.75H5.484M7.5 14.25L5.106 5.165m0 0a1.5 1.5 0 01-1.823-1.095l-1.823-6.441" /></svg>
+                    <span id="cart-count" class="cart-count" style="position: absolute; top: -6px; right: -6px; background: var(--primary-red); color: white; border-radius: 50%; width: 18px; height: 18px; font-size: 0.7rem; display: none; align-items: center; justify-content: center; font-weight: 700;">0</span>
+                </a>
+                <a href="../index.html" class="login-btn">Login / Register</a>
+            </div>
+
+            <div class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="shop-hero" style="background: linear-gradient(135deg, var(--soft-cream) 0%, #faecd8 100%);">
+            <div class="container">
+                <h1>Your Shopping Cart</h1>
+                <p>Review your selected outfits, accessories and customized designs before checkout.</p>
+            </div>
+        </section>
+
+        <section style="padding: 0;">
+            <div class="container">
+                <div class="cart-grid" id="cart-grid-wrapper">
+                    <!-- Cart Items List Container -->
+                    <div class="cart-items-container">
+                        <h2 style="text-align: left; font-size: 1.4rem; margin-bottom: 24px; border-bottom: 2px solid var(--line); padding-bottom: 12px; color: var(--black);">Items in Cart</h2>
+                        <div id="cart-items-list">
+                            <!-- Items Populated by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Cart Summary Sidebar -->
+                    <div class="cart-summary-card">
+                        <h3>Order Summary</h3>
+                        
+                        <div class="promo-code-box">
+                            <input type="text" id="promo-code" placeholder="Enter coupon code" maxlength="15">
+                            <button type="button" id="apply-promo" class="btn btn-secondary" style="padding: 10px 16px; font-size: 0.9rem;">Apply</button>
+                        </div>
+                        <div style="font-size: 0.78rem; color: var(--muted-gray); margin-top: -16px; margin-bottom: 20px; padding-left: 4px;">
+                            Try <strong style="color:var(--black)">ZENO10</strong> (10% off) or <strong style="color:var(--black)">CUSTOM20</strong> (20% off)
+                        </div>
+
+                        <!-- Summary prices calculated by JS -->
+                        <div class="price-box" id="summary-prices-box" style="background: var(--light-gray); border: 1px solid var(--line);">
+                            <!-- Dynamic calculations -->
+                        </div>
+
+                        <a href="checkout.html" id="proceed-to-checkout-btn" class="btn btn-primary full-width-btn" style="text-align: center; display: block;">Proceed to Checkout</a>
+                        <a href="shop.html" class="btn btn-secondary full-width-btn" style="text-align: center; display: block; margin-top: 12px; border-color: var(--line);">Continue Shopping</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col about">
+                    <h4>ZENOCART</h4>
+                    <p>The ultimate platform for custom apparel, merchandise, and wholesale ordering. Design it, customize it, make it yours.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="custom/index.html">T-Shirts</a></li>
+                        <li><a href="custom/index.html">Hoodies</a></li>
+                        <li><a href="custom/index.html">Caps</a></li>
+                        <li><a href="custom/index.html">Mugs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Customization</h4>
+                    <ul>
+                        <li><a href="custom/index.html">Start Designing</a></li>
+                        <li><a href="custom/index.html">Trial Room</a></li>
+                        <li><a href="custom/index.html">Design Templates</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ZENOCART. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#header" id="back-to-top" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+    </a>
+
+    <script src="../script.js"></script>
+</body>
+</html>

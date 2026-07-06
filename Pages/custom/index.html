@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZENOCART Trial Room</title>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body class="custom-page-body">
+    <header class="header" id="header">
+        <nav class="navbar container">
+            <a href="../../index.html" class="nav-logo">ZENOCART</a>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../shop.html">Shop</a></li>
+                <li><a href="index.html" style="color: var(--primary-red);">Custom Design</a></li>
+                <li><a href="../wholesale.html">Wholesale</a></li>
+                <li><a href="../about.html">About Us</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="../cart.html" class="nav-cart-btn" style="position: relative; color: inherit; display: flex; align-items: center; text-decoration: none; margin-right: 15px;">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width: 24px; height: 24px;"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c.51 0 .962-.344 1.087-.835l1.823-6.44a1.125 1.125 0 00-.142-1.095L17.102 3.75H5.484M7.5 14.25L5.106 5.165m0 0a1.5 1.5 0 01-1.823-1.095l-1.823-6.441" /></svg>
+                    <span id="cart-count" class="cart-count" style="position: absolute; top: -6px; right: -6px; background: var(--primary-red); color: white; border-radius: 50%; width: 18px; height: 18px; font-size: 0.7rem; display: none; align-items: center; justify-content: center; font-weight: 700;">0</span>
+                </a>
+                <a href="../../index.html" class="login-btn">Back to Store</a>
+            </div>
+
+            <div class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </div>
+        </nav>
+    </header>
+
+    <main class="custom-main">
+        <section class="custom-hero" id="studio">
+            <div class="container custom-hero-grid">
+                <div class="custom-hero-copy">
+                    <span class="eyebrow">Interactive Trial Room</span>
+                    <h1>Build your avatar, style the outfit, and preview the full look live.</h1>
+                    <p>Users can choose the product, fit, fabric, color, print style, and then dress an avatar to see how the final piece feels before ordering.</p>
+                    <div class="hero-cta">
+                        <a href="#controls" class="btn btn-primary">Start Styling</a>
+                        <a href="#summary" class="btn btn-secondary">See Order Summary</a>
+                    </div>
+                </div>
+
+                <div class="custom-hero-panel">
+                    <div class="preview-stage">
+                        <div style="display: flex; gap: 8px;">
+                            <div class="stage-badge" id="selected-product-badge">Classic Tee</div>
+                            <div class="stage-badge" id="accessory-badge" style="background: var(--primary-red); display: none;">Sneakers</div>
+                        </div>
+                        <div class="avatar-shell" id="avatar-shell">
+                            <div class="avatar-card">
+                                <div class="avatar-spotlight"></div>
+                                <div class="avatar-character" id="avatar-character">
+                                    <div class="avatar-hair" id="avatar-hair"></div>
+                                    <div class="avatar-head" id="avatar-head">
+                                        <span class="avatar-eye avatar-eye-left"></span>
+                                        <span class="avatar-eye avatar-eye-right"></span>
+                                        <span class="avatar-smile"></span>
+                                    </div>
+                                    <div class="avatar-neck"></div>
+                                    <div class="avatar-torso">
+                                        <div class="avatar-arm avatar-arm-left"></div>
+                                        <div class="avatar-top" id="avatar-top">
+                                            <span class="garment-logo" id="garment-logo">Z</span>
+                                            <span class="garment-text" id="garment-text">Own Your Fit</span>
+                                        </div>
+                                        <div class="avatar-arm avatar-arm-right"></div>
+                                    </div>
+                                    <div class="avatar-bottom" id="avatar-bottom"></div>
+                                    <div class="avatar-legs">
+                                        <div class="avatar-leg"></div>
+                                        <div class="avatar-leg"></div>
+                                    </div>
+                                    <div class="avatar-shoes">
+                                        <div class="avatar-shoe"></div>
+                                        <div class="avatar-shoe"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="style-notes">
+                            <div class="style-chip">
+                                <span>Fabric</span>
+                                <strong id="fabric-pill">Cotton Flex</strong>
+                            </div>
+                            <div class="style-chip">
+                                <span>Fit</span>
+                                <strong id="fit-pill">Regular</strong>
+                            </div>
+                            <div class="style-chip">
+                                <span>Print</span>
+                                <strong id="print-pill">Embroidery</strong>
+                            </div>
+                            <div class="style-chip">
+                                <span>Scene</span>
+                                <strong id="scene-pill">Studio</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="trial-room" id="controls">
+            <div class="container trial-room-grid">
+                <aside class="control-panel">
+                    <div class="panel-group" style="background: linear-gradient(135deg, rgba(227,6,19,0.06) 0%, rgba(255,255,255,0.8) 100%); border-color: rgba(227,6,19,0.15);">
+                        <div class="panel-head">
+                            <span class="panel-index" style="background: var(--primary-red);">★</span>
+                            <div>
+                                <h2>Style Presets</h2>
+                                <p>Click to try pre-configured look combinations instantly.</p>
+                            </div>
+                        </div>
+                        <div class="choice-grid" id="preset-options">
+                            <button type="button" class="choice-pill" data-preset="street">Classic Streetwear</button>
+                            <button type="button" class="choice-pill" data-preset="gym">Gym Activewear</button>
+                            <button type="button" class="choice-pill" data-preset="corporate">Smart Corporate</button>
+                            <button type="button" class="choice-pill" data-preset="retro">Retro Bold Co-ord</button>
+                        </div>
+                    </div>
+
+                    <div class="panel-group">
+                        <div class="panel-head">
+                            <span class="panel-index">01</span>
+                            <div>
+                                <h2>Product Setup</h2>
+                                <p>Select product type, size, fit, fabric and quantity.</p>
+                            </div>
+                        </div>
+
+                        <label class="field-label" for="product-select">Product</label>
+                        <select id="product-select" class="custom-select">
+                            <option value="Classic Tee">Classic Tee</option>
+                            <option value="Oversized Hoodie">Oversized Hoodie</option>
+                            <option value="Street Polo">Street Polo</option>
+                            <option value="Co-ord Set">Co-ord Set</option>
+                        </select>
+
+                        <label class="field-label">Size</label>
+                        <div class="choice-grid" id="size-options">
+                            <button type="button" class="choice-pill" data-group="size" data-value="S">S</button>
+                            <button type="button" class="choice-pill active" data-group="size" data-value="M">M</button>
+                            <button type="button" class="choice-pill" data-group="size" data-value="L">L</button>
+                            <button type="button" class="choice-pill" data-group="size" data-value="XL">XL</button>
+                        </div>
+
+                        <label class="field-label">Fit Preference</label>
+                        <div class="choice-grid" id="fit-options">
+                            <button type="button" class="choice-pill active" data-group="fit" data-value="Regular">Regular</button>
+                            <button type="button" class="choice-pill" data-group="fit" data-value="Oversized">Oversized</button>
+                            <button type="button" class="choice-pill" data-group="fit" data-value="Athletic">Athletic</button>
+                        </div>
+
+                        <label class="field-label">Fabric</label>
+                        <div class="choice-grid" id="fabric-options">
+                            <button type="button" class="choice-pill active" data-group="fabric" data-value="Cotton Flex">Cotton Flex</button>
+                            <button type="button" class="choice-pill" data-group="fabric" data-value="French Terry">French Terry</button>
+                            <button type="button" class="choice-pill" data-group="fabric" data-value="Dry Fit Mesh">Dry Fit Mesh</button>
+                        </div>
+
+                        <label class="field-label" for="quantity">Quantity</label>
+                        <input type="number" id="quantity" class="custom-input" min="1" value="1">
+                    </div>
+
+                    <div class="panel-group">
+                        <div class="panel-head">
+                            <span class="panel-index">02</span>
+                            <div>
+                                <h2>Avatar Builder</h2>
+                                <p>Create a model before styling clothes.</p>
+                            </div>
+                        </div>
+
+                        <label class="field-label" for="skin-tone">Skin Tone</label>
+                        <input type="range" id="skin-tone" min="0" max="4" value="1">
+
+                        <label class="field-label" for="hair-style">Hair Style</label>
+                        <select id="hair-style" class="custom-select">
+                            <option value="fade">Fade</option>
+                            <option value="curly">Curly</option>
+                            <option value="bun">Bun</option>
+                            <option value="wave">Wave</option>
+                        </select>
+
+                        <label class="field-label" for="body-type">Body Type</label>
+                        <select id="body-type" class="custom-select">
+                            <option value="balanced">Balanced</option>
+                            <option value="slim">Slim</option>
+                            <option value="broad">Broad</option>
+                        </select>
+
+                        <label class="field-label">Studio Background Scene</label>
+                        <div class="choice-grid" id="scene-options">
+                            <button type="button" class="choice-pill active" data-group="scene" data-value="Studio">Studio</button>
+                            <button type="button" class="choice-pill" data-group="scene" data-value="Street">Street</button>
+                            <button type="button" class="choice-pill" data-group="scene" data-value="Stage">Stage</button>
+                            <button type="button" class="choice-pill" data-group="scene" data-value="Gym">Gym</button>
+                        </div>
+                    </div>
+
+                    <div class="panel-group">
+                        <div class="panel-head">
+                            <span class="panel-index">03</span>
+                            <div>
+                                <h2>Outfit Styling</h2>
+                                <p>Dress the avatar using live wardrobe controls.</p>
+                            </div>
+                        </div>
+
+                        <label class="field-label" for="top-color">Top Color</label>
+                        <input type="color" id="top-color" value="#e30613">
+
+                        <label class="field-label" for="bottom-color">Bottom Color</label>
+                        <input type="color" id="bottom-color" value="#1f2937">
+
+                        <label class="field-label" for="print-style">Print Style</label>
+                        <select id="print-style" class="custom-select">
+                            <option value="Embroidery">Embroidery</option>
+                            <option value="Puff Print">Puff Print</option>
+                            <option value="Minimal Vinyl">Minimal Vinyl</option>
+                            <option value="DTF Graphic">DTF Graphic</option>
+                        </select>
+
+                        <label class="field-label" for="custom-text">Text on Garment</label>
+                        <input type="text" id="custom-text" class="custom-input" maxlength="22" value="Own Your Fit">
+
+                        <label class="field-label" for="logo-mark">Logo Mark</label>
+                        <input type="text" id="logo-mark" class="custom-input" maxlength="2" value="Z">
+
+                        <label class="field-label">Add Accessory</label>
+                        <div class="choice-grid" id="accessory-options">
+                            <button type="button" class="choice-pill active" data-group="accessory" data-value="Sneakers">Sneakers</button>
+                            <button type="button" class="choice-pill" data-group="accessory" data-value="Cap">Cap</button>
+                            <button type="button" class="choice-pill" data-group="accessory" data-value="Tote">Tote Bag</button>
+                        </div>
+                    </div>
+                </aside>
+
+                <section class="summary-panel" id="summary">
+                    <div class="summary-card">
+                        <div class="summary-head">
+                            <span class="panel-index">04</span>
+                            <div>
+                                <h2>Your Custom Build</h2>
+                                <p>Everything updates as the user edits selections.</p>
+                            </div>
+                        </div>
+
+                        <div class="summary-list">
+                            <div class="summary-row"><span>Product</span><strong id="summary-product">Classic Tee</strong></div>
+                            <div class="summary-row"><span>Fit</span><strong id="summary-fit">Regular</strong></div>
+                            <div class="summary-row"><span>Fabric</span><strong id="summary-fabric">Cotton Flex</strong></div>
+                            <div class="summary-row"><span>Print</span><strong id="summary-print">Embroidery</strong></div>
+                            <div class="summary-row"><span>Size</span><strong id="summary-size">M</strong></div>
+                            <div class="summary-row"><span>Quantity</span><strong id="summary-quantity">1</strong></div>
+                            <div class="summary-row"><span>Accessory</span><strong id="summary-accessory">Sneakers</strong></div>
+                            <div class="summary-row"><span>Scene</span><strong id="summary-scene">Studio</strong></div>
+                            <div class="summary-row"><span>Avatar</span><strong id="summary-avatar">Fade / Balanced</strong></div>
+                            <div class="summary-row"><span>Style Mood</span><strong id="summary-mood">Bold street minimal</strong></div>
+                        </div>
+
+                        <div class="price-box">
+                            <div class="summary-row"><span>Base price</span><strong id="base-price">Rs. 899</strong></div>
+                            <div class="summary-row"><span>Customization</span><strong id="custom-price">Rs. 250</strong></div>
+                            <div class="summary-row total-row"><span>Total</span><strong id="total-price">Rs. 1149</strong></div>
+                        </div>
+
+                        <div class="insight-box">
+                            <h3>Trial Room Features</h3>
+                            <ul>
+                                <li>Avatar changes live with outfit styling.</li>
+                                <li>Product, fit, color, text, and print selection in one place.</li>
+                                <li>Dynamic visual representation of scene, hair, and accessories.</li>
+                            </ul>
+                        </div>
+
+                        <a href="#" id="add-to-cart-button" class="btn btn-primary full-width-btn">Add Custom Look to Cart</a>
+                        <p id="order-message" style="text-align: center; margin-top: 15px; color: var(--primary-red); font-weight: 600;"></p>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <script src="../../script.js"></script>
+</body>
+</html>
